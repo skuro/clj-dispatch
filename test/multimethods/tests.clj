@@ -13,3 +13,11 @@
        :test {:version :test}
        :default {:version :default}
        :default {:foo :bar}))
+
+(deftest test-dispatch-by-object
+  (is
+   (isa? java.util.HashSet :multimethods/custom-set))
+  (are [res arg] (= res (dispatch-by-object arg))
+       "This is a Map" (java.util.TreeMap.)
+       "This is a HashMap" (java.util.HashMap.)
+       "This is a Custom Set" (java.util.HashSet.)))
