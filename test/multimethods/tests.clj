@@ -14,10 +14,13 @@
        :default {:version :default}
        :default {:foo :bar}))
 
+; you can force types into  hierarchy
+(derive java.util.HashSet :multimethods/custom-type)
+
 (deftest test-dispatch-by-object
   (is
-   (isa? java.util.HashSet :multimethods/custom-set))
+   (isa? java.util.HashSet :multimethods/custom-type))
   (are [res arg] (= res (dispatch-by-object arg))
        "This is a Map" (java.util.TreeMap.)
        "This is a HashMap" (java.util.HashMap.)
-       "This is a Custom Set" (java.util.HashSet.)))
+       "This is a Custom Type" (java.util.HashSet.)))

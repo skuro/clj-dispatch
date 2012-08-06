@@ -16,8 +16,6 @@
 (defmethod multi-call :default [_]
   :default)
 
-(derive java.util.HashSet ::custom-set)
-
 (defmulti dispatch-by-object class)
 
 (defmethod dispatch-by-object java.util.Map
@@ -28,6 +26,6 @@
   [m]
   "This is a HashMap")
 
-(defmethod dispatch-by-object ::custom-set
+(defmethod dispatch-by-object ::custom-type
   [m]
-  "This is a Custom Set")
+  "This is a Custom Type")
