@@ -1,6 +1,6 @@
 # clj-dispatch
 
-Sample code from the presentation gave at the Amsterdam Clojurians Meetup
+Sample code from the presentation gave at the [Amsterdam Clojurians Meetup](http://amsclj.nl)
 
 ## License
 
